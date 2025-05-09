@@ -1,5 +1,7 @@
 package com.example.roomreservation.api;
 
+import com.example.roomreservation.db.models.Room;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
@@ -25,11 +27,14 @@ public interface ApiService {
 
     // Get List of Rooms
     @GET("rooms")
-    Call<List<Room>> getRooms();
+    Call<List<Room>> getRooms(@Header("Authorization") String token);
 
     // Get Room Details by ID
     @GET("rooms/{id}")
     Call<Room> getRoomDetails(@Path("id") int roomId);
+
+    @GET("rooms/{id}")
+    Call<Room> getRoomDetails(@Header("Authorization") String token, @Path("id") int roomId);
 
     // Make a Reservation
     @POST("reservations")
@@ -42,5 +47,14 @@ public interface ApiService {
     // Cancel Reservation
     @POST("reservations/cancel")
     Call<CancelResponse> cancelReservation(@Body CancelRequest request);
+
+    @POST("reservations")
+    Call<JSONObject> createReservation(
+            @Header("Authorization") String token,
+            @Body Reservation reservation
+    );
+
+    @POST("auth/login")
+    Call<JSONObject> loginUser(@Field("email") String email, @Field("password") String password);
 }
 

@@ -6,9 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.roomreservation.db.dao.RoomDao;
 import com.example.roomreservation.db.dao.ReservationDao;
-import com.example.roomreservation.db.models.Room;
 import com.example.roomreservation.db.models.Reservation;
 
 /**

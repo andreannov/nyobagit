@@ -37,11 +37,11 @@ public class RoomDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_room_detail);
 
         // Inisialisasi komponen UI
-        txtRoomName = findViewById(R.id.txt_room_name);
-        txtLocation = findViewById(R.id.txt_location);
-        txtCapacity = findViewById(R.id.txt_capacity);
-        txtPrice = findViewById(R.id.txt_price);
-        txtStatus = findViewById(R.id.txt_status);
+        txtRoomName = findViewById(R.id.tv_room_name);
+        txtLocation = findViewById(R.id.tv_location);
+        txtCapacity = findViewById(R.id.tv_capacity);
+        txtPrice = findViewById(R.id.tv_price);
+        txtStatus = findViewById(R.id.tv_status);
         btnReserve = findViewById(R.id.btn_reserve);
         progressBar = findViewById(R.id.progress_bar);
 
