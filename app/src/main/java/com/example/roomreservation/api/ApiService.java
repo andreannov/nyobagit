@@ -2,6 +2,7 @@ package com.example.roomreservation.api;
 
 import com.example.roomreservation.db.models.Reservation;
 import com.example.roomreservation.db.models.Room;
+import com.example.roomreservation.db.models.User;
 
 import org.json.JSONObject;
 
@@ -72,4 +73,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("auth/login")
     Call<JSONObject> loginUser(@Field("email") String email, @Field("password") String password);
+
+    @POST("users/register")
+    Call<JSONObject> registerUser(@Body User user);
 }

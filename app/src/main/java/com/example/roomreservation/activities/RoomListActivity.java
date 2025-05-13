@@ -38,7 +38,7 @@ public class RoomListActivity extends AppCompatActivity implements RoomAdapter.O
         setContentView(R.layout.activity_room_list);
 
         // Inisialisasi komponen UI
-        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.rv_room_list);
         progressBar = findViewById(R.id.progress_bar);
 
         // Inisialisasi Retrofit API Service dan SessionManager

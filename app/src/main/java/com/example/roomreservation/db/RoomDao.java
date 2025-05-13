@@ -6,7 +6,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 import androidx.room.Delete;
 
-import com.example.roomreservation.models.Room;
+import com.example.roomreservation.db.models.Room;
 
 import java.util.List;
 

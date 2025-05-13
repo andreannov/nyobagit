@@ -73,11 +73,11 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.RoomViewHolder
 
         public RoomViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtRoomName = itemView.findViewById(R.id.txt_room_name);
-            txtLocation = itemView.findViewById(R.id.txt_location);
-            txtCapacity = itemView.findViewById(R.id.txt_capacity);
-            txtPrice = itemView.findViewById(R.id.txt_price);
-            txtStatus = itemView.findViewById(R.id.txt_status);
+            txtRoomName = itemView.findViewById(R.id.tv_room_name);
+            txtLocation = itemView.findViewById(R.id.tv_room_location);
+            txtCapacity = itemView.findViewById(R.id.tv_room_capacity);
+            txtPrice = itemView.findViewById(R.id.tv_room_price);
+            txtStatus = itemView.findViewById(R.id.tv_room_status);
         }
 
         /**

@@ -113,7 +113,7 @@ public class RoomDetailActivity extends AppCompatActivity {
      * Fungsi untuk navigasi ke halaman reservasi ruangan
      */
     private void navigateToReservation() {
-        Intent intent = new Intent(RoomDetailActivity.this, RoomReservationActivity.class);
+        Intent intent = new Intent(RoomDetailActivity.this, ReservationActivity.class);
         intent.putExtra("room_id", roomId);
         startActivity(intent);
     }
