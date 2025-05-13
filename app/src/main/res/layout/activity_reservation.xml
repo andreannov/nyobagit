@@ -39,7 +39,7 @@
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
         <EditText
-            android:id="@+id/et_reservation_date"
+            android:id="@+id/edit_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="YYYY-MM-DD"
@@ -57,7 +57,7 @@
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
         <EditText
-            android:id="@+id/et_start_time"
+            android:id="@+id/edit_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="HH:MM"
@@ -75,13 +75,22 @@
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
         <EditText
-            android:id="@+id/et_end_time"
+            android:id="@+id/edit_end_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="HH:MM"
             android:inputType="time"
             android:background="@drawable/input_background"
             android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
             android:layout_marginBottom="16dp" />
 
         <!-- Submit Button -->
@@ -96,4 +105,3 @@
             android:padding="12dp" />
     </LinearLayout>
 </ScrollView>
-

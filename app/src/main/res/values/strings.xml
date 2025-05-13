@@ -13,9 +13,9 @@
 
     <!-- Login Screen -->
     <string name="login">Login</string>
-    <string name="username">Username</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login_error">Invalid username or password</string>
+    <string name="register">Register</string>
 
     <!-- Room List Screen -->
     <string name="room_list">Room List</string>

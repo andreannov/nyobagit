@@ -40,10 +40,10 @@ public class ConfirmationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirmation);
 
         // Inisialisasi komponen UI
-        txtRoomName = findViewById(R.id.txt_room_name);
-        txtDate = findViewById(R.id.txt_date);
-        txtStartTime = findViewById(R.id.txt_start_time);
-        txtEndTime = findViewById(R.id.txt_end_time);
+        txtRoomName = findViewById(R.id.tv_confirm_room_name);
+        txtDate = findViewById(R.id.tv_confirm_date);
+        txtStartTime = findViewById(R.id.tv_confirm_start_time);
+        txtEndTime = findViewById(R.id.tv_confirm_end_time);
         btnConfirm = findViewById(R.id.btn_confirm);
         btnCancel = findViewById(R.id.btn_cancel);
         progressBar = findViewById(R.id.progress_bar);
@@ -103,8 +103,7 @@ public class ConfirmationActivity extends AppCompatActivity {
 
         // Panggil API untuk mengonfirmasi reservasi
         Call<JSONObject> call = apiService.createReservation(
-                "Bearer " + sessionManager.getAuthToken(),
-                reservation
+                "Bearer " + sessionManager.getAuthToken(), reservation
         );
         call.enqueue(new Callback<JSONObject>() {
             @Override

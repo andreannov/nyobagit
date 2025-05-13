@@ -17,20 +17,20 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp" />
 
-    <!-- Username Input -->
+    <!-- Email Input -->
     <EditText
-        android:id="@+id/et_username"
+        android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/username"
-        android:inputType="text"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:padding="12dp"
         android:background="@drawable/input_background"
         android:layout_marginBottom="16dp" />
 
     <!-- Password Input -->
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/edit_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
@@ -51,6 +51,18 @@
         android:textStyle="bold"
         android:layout_marginBottom="8dp" />
 
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:backgroundTint="@color/gray_light"
+        android:textColor="@color/black"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
     <!-- Error Message (optional, visibility: gone by default) -->
     <TextView
         android:id="@+id/tv_error_message"
@@ -62,5 +74,13 @@
         android:textStyle="bold"
         android:textSize="14sp" />
 
-</LinearLayout>
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="16dp" />
 
+</LinearLayout>

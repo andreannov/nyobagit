@@ -1,14 +1,22 @@
 package com.example.roomreservation.api;
 
+import com.example.roomreservation.db.models.Reservation;
 import com.example.roomreservation.db.models.Room;
 
+import org.json.JSONObject;
+
+import java.util.List;
+
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.Call;
 
 // ApiService Interface
 public interface ApiService {
@@ -25,36 +33,43 @@ public interface ApiService {
         return retrofit.create(ApiService.class);
     }
 
-    // Get List of Rooms
+    /**
+     * Endpoint untuk mendapatkan daftar ruangan
+     *
+     * @param token Token autentikasi pengguna (Bearer token)
+     * @return List of Room
+     */
     @GET("rooms")
-    Call<List<Room>> getRooms(@Header("Authorization") String token);
+    Call<List<Room>> getRooms(@Header("Authorization") String token);
 
-    // Get Room Details by ID
+    /**
+     * Endpoint untuk mendapatkan detail ruangan berdasarkan ID
+     *
+     * @param token  Token autentikasi pengguna (Bearer token)
+     * @param roomId ID ruangan
+     * @return Detail ruangan
+     */
     @GET("rooms/{id}")
-    Call<Room> getRoomDetails(@Path("id") int roomId);
+    Call<Room> getRoomDetails(@Header("Authorization") String token, @Path("id") int roomId);
 
-    @GET("rooms/{id}")
-    Call<Room> getRoomDetails(@Header("Authorization") String token, @Path("id") int roomId);
-
-    // Make a Reservation
+    /**
+     * Endpoint untuk membuat reservasi
+     *
+     * @param token       Token autentikasi pengguna (Bearer token)
+     * @param reservation Data reservasi dalam bentuk objek
+     * @return JSON response berisi status reservasi
+     */
     @POST("reservations")
-    Call<ReservationResponse> makeReservation(@Body ReservationRequest request);
+    Call<JSONObject> createReservation(@Header("Authorization") String token, @Body Reservation reservation);
 
-    // Confirm Reservation
-    @POST("reservations/confirm")
-    Call<ConfirmationResponse> confirmReservation(@Body ConfirmationRequest request);
-
-    // Cancel Reservation
-    @POST("reservations/cancel")
-    Call<CancelResponse> cancelReservation(@Body CancelRequest request);
-
-    @POST("reservations")
-    Call<JSONObject> createReservation(
-            @Header("Authorization") String token,
-            @Body Reservation reservation
-    );
-
+    /**
+     * Endpoint untuk login pengguna
+     *
+     * @param email    Email pengguna
+     * @param password Password pengguna
+     * @return JSON response berisi token autentikasi
+     */
+    @FormUrlEncoded
     @POST("auth/login")
-    Call<JSONObject> loginUser(@Field("email") String email, @Field("password") String password);
+    Call<JSONObject> loginUser(@Field("email") String email, @Field("password") String password);
 }
-

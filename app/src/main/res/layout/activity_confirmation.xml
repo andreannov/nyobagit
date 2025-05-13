@@ -57,6 +57,16 @@
             android:textSize="18sp"
             android:layout_marginBottom="16dp" />
 
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_marginBottom="16dp" />
+
         <!-- Confirm Button -->
         <Button
             android:id="@+id/btn_confirm"
@@ -82,4 +92,3 @@
 
     </LinearLayout>
 </ScrollView>
-
